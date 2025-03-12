@@ -5,7 +5,6 @@ function dbConnect() {
 
 //_________________GETS____________________
 
-//reservations
 
 function getAllReservations() {
     $db = dbConnect();
@@ -21,41 +20,10 @@ function getOneReservation($id) {
     return $query -> fetch(PDO::FETCH_ASSOC);
 }
 
-function getAllReservationsFromEmail($email) {
-    $db = dbConnect();
-    $query = $db -> prepare('SELECT * FROM reservations JOIN tarifs ON reservations.tarif_fk = tarifs.tarif_id WHERE email = :email');
-    $query -> bindParam(':email', $email, PDO::PARAM_STR);
-    $query -> execute();
-    return $query -> fetchAll(PDO::FETCH_ASSOC);
-}
 
-function getAllReservationsFromTarif($tarif) {
-    $db = dbConnect();
-    $query = $db -> prepare('SELECT * FROM reservations JOIN tarifs ON reservations.tarif_fk = tarifs.tarif_id WHERE tarif_id = :tarif');
-    $query -> bindParam(':tarif', $tarif, PDO::PARAM_INT);
-    $query -> execute();
-    return $query -> fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-//tarifs
-
-function getAllTarifs() {
-    $db = dbConnect();
-    $query = $db -> query('SELECT * FROM tarifs');
-    return $query -> fetchAll(PDO::FETCH_ASSOC);
-}
-
-function getOneTarif() {
-    $db = dbConnect();
-    $query = $db -> prepare('SELECT * FROM tarifs WHERE tarif_id = :id');
-    $query -> bindParam(':id', $id, PDO::PARAM_INT);
-    $query -> execute();
-}
 
 //________________POST (insert)________________
 
-//reservations
 
 function postReservation($post){
     $db = dbConnect();
@@ -74,7 +42,6 @@ function postReservation($post){
 
 //_________________PUT (update)____________________
 
-//reservations
 
 function updateReservation($id, $data){
     $db = dbConnect();
@@ -91,9 +58,10 @@ function updateReservation($id, $data){
     $query -> execute();
 }
 
+
+
 //_________________DELETE____________________
 
-//reservations
 
 function deleteReservation($id){
     $db = dbConnect();

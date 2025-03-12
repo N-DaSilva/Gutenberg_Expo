@@ -20,6 +20,7 @@ switch($request_method)
         header('Content-Type: application/json');
         echo json_encode(array('message' => 'Line added successfully'), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         break;
+        
     case 'PUT':
         if (isset($_GET["id"])){
             parse_str(file_get_contents("php://input"), $putData);
