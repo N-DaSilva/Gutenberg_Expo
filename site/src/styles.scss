@@ -1,3 +1,32 @@
-h1 {
-    color: red;
+body.home {
+    background-image: url(img/homepage-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.books {
+    margin-top: 8%;
+}
+
+.book {
+    transition: transform 0.2s ease-out;
+    width: fit-content;
+    position: relative;
+}
+
+.book:hover {
+    transition: transform 0.2s ease-out;
+    transform: translateX(100px);
+}
+
+.book p {
+    font-size:2rem;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
 }
