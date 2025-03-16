@@ -7,22 +7,26 @@ import { MainInfo } from './components/MainInfo'
 import './App.css'
 
 function App() {
-  const [data, setData] = useState({});
+  const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    fetch('https://da-silva.butmmi.o2switch.site/api-reservation/api.php')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(err => console.error(err))
-  }
-    , [])
+    fetch('http://localhost/github/Gutenberg_Expo/api-reservation/')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setReservations(data);
+      })
+      .catch((error) => console.error('There was an error!', error));
+  }, []);
+  
 
   return (
     <div>
-      <MainInfo data={data} />
-      <ReservationList data={data} />
-      <PieChart data={data} />
-      <BarChart data={data} />
+      <MainInfo reservations={reservations} />
+      <ReservationList reservations={reservations} />
+      <PieChart reservations={reservations} />
+      <BarChart reservations={reservations} />
     </div>
   )
 }

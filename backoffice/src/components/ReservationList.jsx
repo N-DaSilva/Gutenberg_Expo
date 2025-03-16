@@ -1,5 +1,12 @@
-export const ReservationList = ({ data }) => {
+import { ReservationLine } from './ReservationLine';
+
+export const ReservationList = ({ reservations }) => {
     return (
-        <h1>Reservation List</h1>
+        <details>
+            <summary>Reservation List</summary>
+            { reservations.map((reservation) => {
+                return < ReservationLine key={reservation.resa_id} reservation={reservation} />
+            }) }
+        </details>
     )
 }

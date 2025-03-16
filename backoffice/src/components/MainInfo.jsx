@@ -1,5 +1,8 @@
-export const MainInfo = ({ data }) => {
+export const MainInfo = ({ reservations }) => {
     return (
-        <h1>Main Info</h1>
+        <div>
+            <h1>Main Info</h1>
+            <p>{reservations.length} réservations au total</p>
+        </div>
     )
 }

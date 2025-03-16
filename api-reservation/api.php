@@ -1,9 +1,22 @@
 <?php
+// Allow requests from any origin (replace * with your frontend's URL if needed)
+header("Access-Control-Allow-Origin: *");
+
+// Allow specific HTTP methods
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+
+// Allow specific headers
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+
 include 'model.php';
 $request_method = $_SERVER["REQUEST_METHOD"];
 
 switch($request_method)
 {
+    case 'OPTIONS':
+        http_response_code(204);
+        break;
     case 'GET':
         if(isset($_GET["id"])){
             $result = getOneReservation($_GET["id"]);
