@@ -1,5 +1,5 @@
 <?php
-// Allow requests from any origin (replace * with your frontend's URL if needed)
+// Allow requests from any origin
 header("Access-Control-Allow-Origin: *");
 
 // Allow specific HTTP methods
