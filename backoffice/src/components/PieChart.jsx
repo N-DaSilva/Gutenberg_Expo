@@ -1,5 +1,5 @@
 export const PieChart = ({ data }) => {
     return (
-        <h1>Pie Chart</h1>
+        <h2>Pie Chart</h2>
     )
 }

@@ -1,5 +1,5 @@
 export const BarChart = ({ data }) => {
     return (
-        <h1>Bar Chart</h1>
+        <h2>Bar Chart</h2>
     )
 }

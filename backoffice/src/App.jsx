@@ -11,19 +11,16 @@ function App() {
 
   useEffect(() => {
     fetch('http://localhost/github/Gutenberg_Expo/api-reservation/')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setReservations(data);
-      })
-      .catch((error) => console.error('There was an error!', error));
+      .then((response) => {return response.json();})
+      .then((data) => {setReservations(data);})
+      .catch((error) => console.error(error));
   }, []);
 
   return (
     <div>
-      <MainInfo reservations={reservations} />
+      <h1>Backoffice</h1>
       <ReservationList reservations={reservations} />
+      <MainInfo reservations={reservations} />
       <PieChart reservations={reservations} />
       <BarChart reservations={reservations} />
     </div>
