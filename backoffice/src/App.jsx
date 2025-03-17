@@ -10,7 +10,7 @@ function App() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost/github/Gutenberg_Expo/api-reservation/')
+    fetch('https://da-silva.butmmi.o2switch.site/api-reservation/')
       .then((response) => {return response.json();})
       .then((data) => {setReservations(data);})
       .catch((error) => console.error(error));
