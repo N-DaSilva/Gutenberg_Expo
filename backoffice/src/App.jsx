@@ -21,12 +21,8 @@ function App() {
       <h1>Backoffice</h1>
       <ReservationList reservations={reservations} />
       <MainInfo reservations={reservations} />
-      <canvas id='pie-chart'>
-        <PieChart reservations={reservations} />
-      </canvas>
-      <canvas id='bar-chart'>
-        <BarChart reservations={reservations} />
-      </canvas>
+      <PieChart reservations={reservations} />
+      <BarChart reservations={reservations} />
     </div>
   )
 }
