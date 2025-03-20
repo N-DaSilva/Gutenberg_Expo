@@ -93,12 +93,10 @@ let firstPersonControls = null;
 
 function toggleControls() {
     if (isFirstPerson) {
-        // 🔄 Revenir à OrbitControls
         firstPersonControls.dispose();
-        controls.enabled = true; // ✅ Réactive OrbitControls
+        controls.enabled = true;
     } else {
-        // 🚀 Passer en FirstPersonControls
-        controls.enabled = false; // ✅ Désactive OrbitControls
+        controls.enabled = false; 
         firstPersonControls = new FirstPersonControls(camera, renderer.domElement);
         firstPersonControls.lookSpeed = 0;
         firstPersonControls.movementSpeed = 0;
@@ -139,20 +137,17 @@ document.addEventListener("click", (event) => {
         if (intersects[0].object.name === "table-inclinee") {
             toggleControls();
 
-            // ✅ Calcul du centre réel de l'objet
             const box = new THREE.Box3().setFromObject(intersects[0].object);
             const center = new THREE.Vector3();
             box.getCenter(center);
             console.log("Centre de l'objet:", center);
 
-            // ✅ Nouvelle position de la caméra pour bien voir l'objet
             const newPosition = new THREE.Vector3(
                 center.x,
                 center.y + 40,
                 center.z - 20
             );
 
-            // ✅ Animation fluide avec GSAP
             const tl = gsap.timeline();
             tl.to(camera.position, {
                 duration: 1.5,
