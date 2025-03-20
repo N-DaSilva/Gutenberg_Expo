@@ -1,3 +1,9 @@
+@import 'styles/components';
+@import 'styles/variables';
+@import 'styles/layout';
+@import 'styles/fonts';
+
+
 body.home {
     background-image: url(img/homepage-bg.jpg);
     background-size: cover;
@@ -7,26 +13,38 @@ body.home {
 }
 
 .books {
-    margin-top: 8%;
+    margin-top: 50%;
 }
 
 .book {
     transition: transform 0.2s ease-out;
     width: fit-content;
     position: relative;
+    max-width: 75%;
+
+    &:hover {
+        transform: translateX(50px);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    p {
+        font-size: 1rem;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+    }
 }
 
-.book:hover {
-    transition: transform 0.2s ease-out;
-    transform: translateX(100px);
-}
-
-.book p {
-    font-size:2rem;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
+body.expo {
+    background-image: url(img/expo-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }

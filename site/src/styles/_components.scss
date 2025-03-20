@@ -1,0 +1,36 @@
+@import "variables";
+
+nav {
+    width: 90vw;
+    @include flexbox(row);
+    padding: 10px;
+
+    .nav-links {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 10%;
+        right: -10%;
+        opacity: 0;
+        transition: right 0.5s ease, opacity 0.5s ease;
+
+        &.nav-active {
+            right: 10%;
+            opacity: 1;
+        }
+    }
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        max-width: 150px;
+    }
+
+    .burger {
+        margin-left: auto;
+    }
+}
