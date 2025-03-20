@@ -11,7 +11,7 @@ export const PieChart = ({ reservations }) => {
   }, {});
 
   const data = {
-    labels: ['12-25 ans', '+62 ans', '-12 ans', '26-61 ans'],
+    labels: Object.keys(tarifCounts),
     datasets: [
       {
         data: Object.values(tarifCounts),
@@ -25,14 +25,14 @@ export const PieChart = ({ reservations }) => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'left',
       },
     },
   };
 
   return (
-    <div style={{ width: '50%', margin: 'auto' }}>
-      <Pie data={data} options={options} />
+    <div>
+        <Pie data={data} options={options} />
     </div>
   );
 };

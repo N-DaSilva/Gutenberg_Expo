@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { ReservationList } from './components/ReservationList'
 import { PieChart } from './components/PieChart'
-import { BarChart } from './components/BarChart'
+import { BarChartWeek } from './components/BarChartWeek'
+import { BarChartDay } from './components/BarChartDay'
 import { MainInfo } from './components/MainInfo'
 
 import './App.css'
@@ -22,7 +23,8 @@ function App() {
       <ReservationList reservations={reservations} />
       <MainInfo reservations={reservations} />
       <PieChart reservations={reservations} />
-      <BarChart reservations={reservations} />
+      <BarChartWeek reservations={reservations} />
+      <BarChartDay reservations={reservations} />
     </div>
   )
 }
