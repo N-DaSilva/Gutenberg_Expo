@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Redirect root domain to /fr
+RewriteCond %{HTTP_HOST} ^gutenberg\.rgbagency\.fr$ [NC]
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^$ /fr/ [R=301,L]

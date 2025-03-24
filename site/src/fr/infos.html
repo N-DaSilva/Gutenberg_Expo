@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,59 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
 </head>
+
 <body class="infos">
     <header>
         <nav>
             <select name="lang" id="lang">
-                <option value="fr">Fr</option>
+                <option value="fr" selected>Fr</option>
                 <option value="en">En</option>
             </select>
             <a href="index.html">
                 <img src="../img/logo.svg" alt="Accueil">
             </a>
-            <button class="burger close">Menu</button>
+            <div class="burger-menu close">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
-                <button class="close">X</button>
+                <button class="close button">X</button>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="expo.html">Exposition</a></li>
                 <li><a href="#">L'expérience</a></li>
                 <li><a href="reservation.html">Réserver</a></li>
                 <li><a href="infos.html">Informations pratiques</a></li>
             </ul>
+        </nav>
     </header>
-    <h1>Informations pratiques</h1>
-
-    <div class="horaires">
-        <h2>Horaires</h2>
-        <p>Du 24 mars au 31 août</p>
-        <p>Ouvert de Lundi à Dimanche de 9h à 18h</p>
-    </div>
-    
-    <div class="acces">
-        <h2>Se rendre à l'exposition</h2>
-        <p>2 rue Descartes, 77420 Champs-sur-Marne</p>
-        <p>RER A descendre à l’arrêt Gutenberg</p>
-        <p>Bus 211 arrêt Descartes</p>
-        <p>Prendre la sortie 2 sur l’autoroute 5</p>
-        <p>Parking handicapé et ascenseurs disponibles au public</p>
-    </div>
-
-    <div class="contact">
-        <h2>Nous contacter</h2>
-        <p>The RGB Agency</p>
-        <p>2 rue Descartes, 77420 Champs-sur-Marne</p>
-        <p><a href="mailto:contact@rgbagency.fr">contact@rgbagency.fr</a></p>
-    </div>
+    <main>
+        <h1>Informations pratiques</h1>
+        <div class="horaires">
+            <h2>Horaires</h2>
+            <p>Du 24 mars au 31 août</p>
+            <p>Ouvert de Lundi à Dimanche de 9h à 18h</p>
+        </div>
+        <div class="acces">
+            <img src="../img/map.jpg" alt="">
+            <div>
+                <h2>Se rendre à l'exposition</h2>
+                <p>2 rue Descartes, 77420 Champs-sur-Marne</p>
+                <p>RER A descendre à l’arrêt Gutenberg</p>
+                <p>Bus 211 arrêt Descartes</p>
+                <p>Prendre la sortie 2 sur l’autoroute 5</p>
+                <p>Parking handicapé et ascenseurs disponibles au public</p>
+            </div>
+        </div>
+        <div class="contact">
+            <h2>Nous contacter</h2>
+            <p>The RGB Agency</p>
+            <p>2 rue Descartes, 77420 Champs-sur-Marne</p>
+            <p><a href="mailto:contact@rgbagency.fr">contact@rgbagency.fr</a></p>
+        </div>
+    </main>
 
     <script src="../script.js"></script>
 </body>
+
 </html>

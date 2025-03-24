@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book now - Gutenberg: And the ink flows</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
+</head>
+
+<body class="reservation">
+    <header>
+        <nav>
+            <select name="lang" id="lang">
+                <option value="fr">Fr</option>
+                <option value="en" selected>En</option>
+            </select>
+            <a href="index.html">
+                <img src="../img/logo.svg" alt="Home">
+            </a>
+            <div class="burger-menu close">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <button class="close button">X</button>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expo.html">Exhibition</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="reservation.html">Buy your tickets</a></li>
+                <li><a href="infos.html">Informations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <p class="step step-1 active">1. Book your visit</p>
+        <p class="step step-2">2. Choose your tickets</p>
+        <p class="step step-3">3. Summary and payment</p>
+    </div>
+
+    <form>
+        <div id="etape-1">
+            <div class="form-container">
+                <fieldset>
+                    <legend>
+                        <h1>Book your visit</h1>
+                    </legend>
+                    <br><br>
+                    <p>All fields are required</p>
+                    <div class="wrapper">
+                        <div class="form-group nom">
+                            <label for="nom">Surname</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group prenom">
+                            <label for="prenom">Name</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group date">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group code">
+                            <label for="code">Promo code</label>
+                            <input type="text" id="code" name="code">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <h2>Choose a time slot</h2>
+                    </legend>
+                    <br><br><br>
+                    <div class="hour-btns">
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-1" value="09:00" required>
+                            <label for="heure-1">9h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-2" value="10:00" required>
+                            <label for="heure-2">10h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-3" value="11:00" required>
+                            <label for="heure-3">11h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-4" value="12:00" required>
+                            <label for="heure-4">12h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-5" value="13:00" required>
+                            <label for="heure-5">13h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-6" value="14:00" required>
+                            <label for="heure-6">14h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-7" value="15:00" required>
+                            <label for="heure-7">15h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-8" value="16:00" required>
+                            <label for="heure-8">16h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-9" value="17:00" required>
+                            <label for="heure-9">17h</label>
+                        </div>
+                        <div class="hour-btn">
+                            <input type="radio" name="heure" id="heure-10" value="18:00" required>
+                            <label for="heure-10">18h</label>
+                        </div>
+                    </div>
+                    <div class="btn-wrap"><button type="button" class="form-btn next" data-current="1">Next</button></div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="hide" id="etape-2">
+            <div class="form-container">
+                <fieldset>
+                    <legend>
+                        <h2>Choose your tickets</h2>
+                    </legend>
+                    <br><br><br>
+                    <div class="ticket" id="forfait-1">
+                        <div class="ticket-label">
+                            <p>Children's rate (-12 years) - 5€</p>
+                            <button type="button" class="ticket-btn moins">-</button>
+                            <span id="ticket-nbr-1">---</span>
+                            <button type="button" class="ticket-btn plus">+</button>
+                        </div>
+                        <div class="added-tickets"></div>
+                    </div>
+                    <div class="ticket" id="forfait-2">
+                        <div class="ticket-label">
+                            <p>Youth rate (-26 years) - 10€</p>
+                            <button type="button" class="ticket-btn moins">-</button>
+                            <span id="ticket-nbr-2">---</span>
+                            <button type="button" class="ticket-btn plus">+</button>
+                        </div>
+                        <div class="added-tickets"></div>
+                    </div>
+                    <div class="ticket" id="forfait-3">
+                        <div class="ticket-label">
+                            <p>Full rate - 12€</p>
+                            <button type="button" class="ticket-btn moins">-</button>
+                            <span id="ticket-nbr-3">---</span>
+                            <button type="button" class="ticket-btn plus">+</button>
+                        </div>
+                        <div class="added-tickets"></div>
+                    </div>
+                    <div class="ticket" id="forfait-4">
+                        <div class="ticket-label">
+                            <p>Senior rate (+62 years) - 10€</p>
+                            <button type="button" class="ticket-btn moins">-</button>
+                            <span id="ticket-nbr-4">---</span>
+                            <button type="button" class="ticket-btn plus">+</button>
+                        </div>
+                        <div class="added-tickets"></div>
+                    </div>
+                </fieldset>
+                <div class="form-selection">
+                    <h3>Your selection</h3>
+                    <br><br>
+                    <ul id="ticket-selection"></ul>
+                    <p>Total : <span id="total-selection"></span></p>
+
+                    <div class="btn-wrap">
+                        <button type="button" class="form-btn prev" data-current="2">Previous</button>
+                        <button type="button" id="to-recap" class="form-btn next" data-current="2">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hide" id="etape-3">
+            <div class="form-container">
+                <div class="summary" id="summary">
+                    <h2>Summary</h2>
+                    <br><br>
+                    <p>Surname : <span id="nom-summary"></span></p>
+                    <p>Name : <span id="prenom-summary"></span></p>
+                    <p>Email : <span id="email-summary"></span></p>
+                    <p>Date : <span id="date-summary"></span></p>
+                    <p>Time slot : <span id="horaire-summary"></span></p>
+                    <p>Tickets :
+                    <ul id="tickets-summary"></ul>
+                    </p>
+                    <p>Total : <span id="total-summary"></span></p>
+                </div>
+                <fieldset>
+                    <legend>
+                        <h2>Payment information</h2>
+                    </legend>
+                    <br><br>
+                    <div class="form-group">
+                        <label for="card">Card number</label>
+                        <input type="text" id="card" name="card">
+                    </div>
+                    <div class="form-group">
+                        <label for="date-exp">Expiration date</label>
+                        <input type="text" id="date-exp" name="date-exp">
+                    </div>
+                    <div class="form-group">
+                        <label for="crypto">Security Code</label>
+                        <input type="text" id="crypto" name="crypto">
+                    </div>
+
+                    <div class="btn-wrap">
+                        <button type="button" class="form-btn prev" data-current="3">Previous</button>
+                        <input type="submit" value="Submit">
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+
+    <div class="confirmation hide">
+        <h2>Thank you for your reservation!</h2>
+        <p>A confirmation email has been sent to <span id="confirm-email"></span>.</p>
+        <a href="index.html" class="button">Go home</a>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "onQFXCTKG6ojNbY2B",
+            });
+        })();
+    </script>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const language = document.getElementById('lang');
+
+    language.addEventListener('change', () => {
+        const lang = language.options[language.selectedIndex].value;
+        const currentUrl = window.location.href;
+        const newUrl = currentUrl.replace(/\/(fr|en)\//, `/${lang}/`);
+        window.location.replace(newUrl);
+    });
+
+
+
     const toggle = document.querySelectorAll('.close');
     const nav = document.querySelector('.nav-links');
 
@@ -40,10 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', () => {
             const currentpage = parseInt(btn.dataset.current);
             document.getElementById(`etape-${currentpage}`).classList.toggle('hide');
+            document.querySelector(`.step-${currentpage}`).classList.toggle('active');
             if (btn.classList.contains('next')) {
                 document.getElementById(`etape-${currentpage + 1}`).classList.toggle('hide');
+                document.querySelector(`.step-${currentpage + 1}`).classList.toggle('active');
             } else if (btn.classList.contains('prev')) {
                 document.getElementById(`etape-${currentpage - 1}`).classList.toggle('hide');
+                document.querySelector(`.step-${currentpage - 1}`).classList.toggle('active');
             }
         });
     })
@@ -52,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.ticket-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const ticketId = btn.parentElement.id.split('-')[1];
+            const ticket = btn.parentElement.parentElement;
+            const ticketId = ticket.id.split('-')[1];
             const ticketAmountField = document.getElementById(`ticket-nbr-${ticketId}`);
             let ticketAmount = ticketAmountField.innerText == '---' ? 0 : parseInt(ticketAmountField.innerText);
 
@@ -60,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ticketAmount = ticketAmount > 0 ? ticketAmount - 1 : 0;
                 commande[`tarif-${ticketId}`] = commande[`tarif-${ticketId}`] > 0 ? commande[`tarif-${ticketId}`] - 1 : 0;
 
-                btn.parentElement.querySelector('.added-tickets').removeChild(document.getElementById(`added-ticket-${ticketId}-${ticketAmount + 1}`));
+                ticket.querySelector('.added-tickets').removeChild(document.getElementById(`added-ticket-${ticketId}-${ticketAmount + 1}`));
 
             } else if (btn.classList.contains('plus')) {
                 ticketAmount += 1;
@@ -69,7 +84,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 const addedTicket = document.createElement('div');
                 addedTicket.classList.add('added-ticket');
                 addedTicket.id = `added-ticket-${ticketId}-${ticketAmount}`;
-                addedTicket.innerHTML = `
+
+                if (language.options[language.selectedIndex].value == 'en') {
+                    addedTicket.innerHTML = `
+                <div class='form-group'>
+                    <label for='nom-${ticketId}-${ticketAmount}'>Surname</label>
+                    <input type='text' name='nom-${ticketId}-${ticketAmount}' id='nom-${ticketId}-${ticketAmount}'>
+                </div>
+                <div class='form-group'>
+                    <label for='prenom-${ticketId}-${ticketAmount}'>Name</label>
+                    <input type='text' name='prenom-${ticketId}-${ticketAmount}' id='prenom-${ticketId}-${ticketAmount}'>
+                </div>
+                `;
+                } else {
+
+                    addedTicket.innerHTML = `
                 <div class='form-group'>
                     <label for='nom-${ticketId}-${ticketAmount}'>Nom</label>
                     <input type='text' name='nom-${ticketId}-${ticketAmount}' id='nom-${ticketId}-${ticketAmount}'>
@@ -79,8 +108,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <input type='text' name='prenom-${ticketId}-${ticketAmount}' id='prenom-${ticketId}-${ticketAmount}'>
                 </div>
                 `;
+                }
 
-                btn.parentElement.querySelector('.added-tickets').appendChild(addedTicket);
+                ticket.querySelector('.added-tickets').appendChild(addedTicket);
             }
             updateSelection(commande);
             ticketAmountField.innerText = ticketAmount == 0 ? '---' : ticketAmount;
@@ -93,21 +123,41 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalField = document.getElementById('total-selection');
         totalField.innerText = `${commande['tarif-1'] * 5 + commande['tarif-2'] * 10 + commande['tarif-3'] * 12 + commande['tarif-4'] * 10}€`;
 
-        if (commande['tarif-1'] > 0) {
-            selectionList.innerHTML += `<li>Tarif Enfants (-12 ans) x${commande['tarif-1']}</li>`;
+        if (language.options[language.selectedIndex].value == 'en') {
+            if (commande['tarif-1'] > 0) {
+                selectionList.innerHTML += `<li>Children's rate (-12 y/o) x${commande['tarif-1']}</li>`;
+            }
+
+            if (commande['tarif-2'] > 0) {
+                selectionList.innerHTML += `<li>Youth rate (-26 y/o) x${commande['tarif-2']}</li>`;
+            }
+
+            if (commande['tarif-3'] > 0) {
+                selectionList.innerHTML += `<li>Full rate x${commande['tarif-3']}</li>`;
+            }
+
+            if (commande['tarif-4'] > 0) {
+                selectionList.innerHTML += `<li>Senior rate x${commande['tarif-4']}</li>`;
+            }
+        } else {
+            if (commande['tarif-1'] > 0) {
+                selectionList.innerHTML += `<li>Tarif Enfants (-12 ans) x${commande['tarif-1']}</li>`;
+            }
+
+            if (commande['tarif-2'] > 0) {
+                selectionList.innerHTML += `<li>Tarif Jeunes (-26 ans) x${commande['tarif-2']}</li>`;
+            }
+
+            if (commande['tarif-3'] > 0) {
+                selectionList.innerHTML += `<li>Plein tarif x${commande['tarif-3']}</li>`;
+            }
+
+            if (commande['tarif-4'] > 0) {
+                selectionList.innerHTML += `<li>Tarif Seniors x${commande['tarif-4']}</li>`;
+            }
         }
 
-        if (commande['tarif-2'] > 0) {
-            selectionList.innerHTML += `<li>Tarif Jeunes (-26 ans) x${commande['tarif-2']}</li>`;
-        }
 
-        if (commande['tarif-3'] > 0) {
-            selectionList.innerHTML += `<li>Plein tarif x${commande['tarif-3']}</li>`;
-        }
-
-        if (commande['tarif-4'] > 0) {
-            selectionList.innerHTML += `<li>Tarif Seniors x${commande['tarif-4']}</li>`;
-        }
     }
 
     const updateRecap = () => {
@@ -136,8 +186,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('to-recap').addEventListener('click', updateRecap);
 
+    function sendReservationEmail(reservationData) {
+        emailjs.send('gutenberg_expo', 'confirmed_resa', reservationData)
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+            })
+            .catch((error) => {
+                console.error('Failed to send email:', error);
+            });
+    }
+
     document.querySelector('input[type="submit"]').addEventListener('click', (e) => {
         e.preventDefault();
+        if (!document.querySelector('form').checkValidity()) {
+            if (language.options[language.selectedIndex].value == 'en') {
+                alert('Please fill in all the form fields');
+            } else {
+                alert('Veuillez remplir tous les champs du formulaire');
+            }
+            return;
+        }
+
+        document.querySelector('.progress-bar').classList.add('hide');
         const formData = new FormData();
 
         for (i = 1; i <= 4; i++) {
@@ -152,9 +222,43 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('heure', document.querySelector('input[name="heure"]:checked').value);
         formData.append('email', document.getElementById('email').value);
 
-        fetch('https://rgbagency.fr/api-reservation/api.php', {
+        fetch('http://localhost/github/Gutenberg_Expo/api-reservation/', {
             method: 'POST',
             body: formData
         })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.querySelector('form').classList.add('hide');
+                    document.querySelector('.confirmation').classList.remove('hide');
+                    document.getElementById('confirm-email').innerText = document.getElementById('email').value;
+                    document.querySelector('.progress-bar').classList.add('hide');
+
+                    let reservations = [];
+                    for (i = 1; i <= 4; i++) {
+                        for (j = 1; j <= commande[`tarif-${i}`]; j++) {
+                            reservations.push({
+                                'resa-nom': document.getElementById(`nom-${i}-${j}`).value,
+                                'resa-prenom': document.getElementById(`prenom-${i}-${j}`).value,
+                                tarif: i == 1 ? 'Tarif Enfants (-12 ans)' : i == 2 ? 'Tarif Jeunes (-26 ans)' : i == 3 ? 'Plein tarif' : 'Tarif Seniors (+62 ans)',
+                                prix: i == 1 ? 5 : i == 2 ? 10 : i == 3 ? 12 : 10
+                            });
+                        }
+                    }
+
+                    const reservationData = {
+                        nom: document.getElementById('nom').value,
+                        prenom: document.getElementById('prenom').value,
+                        email: document.getElementById('email').value,
+                        date: document.getElementById('date').value,
+                        heure: document.querySelector('input[name="heure"]:checked').value,
+                        reservations: reservations,
+                        total: document.getElementById('total-selection').innerText
+                    }
+
+                    sendReservationEmail(reservationData);
+                }
+            })
+            .catch(error => console.error(error));
     });
 });

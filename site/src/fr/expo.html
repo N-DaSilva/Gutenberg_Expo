@@ -11,15 +11,19 @@
     <header>
         <nav>
             <select name="lang" id="lang">
-                <option value="fr">Fr</option>
+                <option value="fr" selected>Fr</option>
                 <option value="en">En</option>
             </select>
             <a href="index.html">
                 <img src="../img/logo.svg" alt="Accueil">
             </a>
-            <button class="burger close">Menu</button>
+            <div class="burger-menu close">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul class="nav-links">
-                <button class="close">X</button>
+                <button class="close button">X</button>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="expo.html">Exposition</a></li>
                 <li><a href="#">L'expérience</a></li>
@@ -29,68 +33,70 @@
         </nav>
     </header>
 
-    <div id="expo-1">
+    <div id="expo-1" class="section">
         <h1>Pourquoi on ne parle que de Gutenberg quand on parle d’imprimerie ?</h1>
-        <p>On parle surtout de Gutenberg parce qu’il a perfectionné l’imprimerie avec les caractères mobiles en métal, rendant les livres accessibles. Mais soyons honnêtes, il n’a pas tout inventé ! Les Chinois imprimaient déjà avec des blocs de bois des siècles avant lui, et les Coréens utilisaient même des caractères mobiles en métal. Gutenberg, lui, a juste eu le génie de rendre ça plus efficace en Europe et de mieux faire parler de lui !</p>
+        <p class="p-bg">On parle surtout de Gutenberg parce qu’il a perfectionné l’imprimerie avec les caractères mobiles en métal, rendant les livres accessibles. Mais soyons honnêtes, il n’a pas tout inventé ! Les Chinois imprimaient déjà avec des blocs de bois des siècles avant lui, et les Coréens utilisaient même des caractères mobiles en métal. Gutenberg, lui, a juste eu le génie de rendre ça plus efficace en Europe et de mieux faire parler de lui !</p>
         <img src="../img/gutenberg-mobile.png" alt="Suite" class="expo-btn gutenberg-btn next" data-current="1">
     </div>
 
-    <div id="expo-2" class="expo-nav hide">
-        <img src="../img/gutenberg-mobile.png" alt="" class="gutenberg-img">
+    <div id="expo-2" class="section expo-nav hide">
+        <img src="../img/gutenberg-yeux.png" alt="" class="gutenberg-img">
 
         <div class="expo-nav-btns">
             <img src="../img/qui-mobile.png" alt="Qui ?" class="qui expo-btn next" data-current="2">
             <img src="../img/comment-mobile.png" alt="Comment ?" class="comment expo-btn skip" data-current="2" data-goto="4">
             <img src="../img/pourquoi-mobile.png" alt="Pourquoi ?" class="pourquoi expo-btn skip" data-current="2" data-goto="5">
-            <button class="apres expo-btn skip" data-current="2" data-goto="6">Et après ?</button>
+            <img src="../img/apres.png" alt="Et après ?" class="apres expo-btn skip" data-current="2" data-goto="6">
         </div>
     </div>
 
-    <div id="expo-3" class="hide">
+    <div id="expo-3" class="section hide">
         <h1>Qui ?</h1>
-        <button class="expo-btn next" data-current="3">Comment ?</button>
-        <div class="expo-card">
-            <p class="text">Les Chinois ont inventé l’impression avec des blocs de bois dès le IXe siècle, gravant des textes entiers pour les reproduire en série. Au XIe siècle, Bi Sheng a même créé des caractères mobiles en argile, bien avant Gutenberg, mais la complexité de l’écriture chinoise a limité leur usage.</p>
-            <img src="../img/expo-chinois.png" alt="">
-        </div>
-        <div class="expo-card">
-            <div class="text">
-                <p>Gutenberg est le premier à utiliser un aliage de métal pour l’imprimerie, ce qui rend l’impression viable à grande échelle grâce aux étapes conçues par Gutenberg:
-                    <ul>
-                        <li>Typographie</li>
-                        <li>Composition</li>
-                        <li>Impression</li>
-                    </ul>
-                </p>
+        <h2 class="next-title expo-btn next" data-current="3">Comment ?</h2>
+        <div class="card-wrapper">
+            <div class="expo-card first-card">
+                <p class="text">Les Chinois ont inventé l’impression avec des blocs de bois dès le IXe siècle, gravant des textes entiers pour les reproduire en série. Au XIe siècle, Bi Sheng a même créé des caractères mobiles en argile, bien avant Gutenberg, mais la complexité de l’écriture chinoise a limité leur usage.</p>
+                <img src="../img/expo-chinois.png" alt="">
             </div>
-            <img src="../img/expo-gutenberg.png" alt="">
-        </div>
-        <div class="expo-card">
-            <p class="text">Aujourd’hui, les imprimeurs utilisent des technologies ultra-performantes comme l’impression offset et le numérique pour produire des livres, journaux et affiches en masse. Avec les imprimantes 3D, ils ne se contentent plus d’encre et de papier, mais fabriquent aussi des objets, des maisons et même des organes !</p>
-            <img src="../img/expo-imprimeur.png" alt="">
+            <div class="expo-card">
+                <div class="text">
+                    <p>Gutenberg est le premier à utiliser un aliage de métal pour l’imprimerie, ce qui rend l’impression viable à grande échelle grâce aux étapes conçues par Gutenberg:
+                        <ul>
+                            <li>Typographie</li>
+                            <li>Composition</li>
+                            <li>Impression</li>
+                        </ul>
+                    </p>
+                </div>
+                <img src="../img/expo-gutenberg.png" alt="">
+            </div>
+            <div class="expo-card last-card">
+                <p class="text">Aujourd’hui, les imprimeurs utilisent des technologies ultra-performantes comme l’impression offset et le numérique pour produire des livres, journaux et affiches en masse. Avec les imprimantes 3D, ils ne se contentent plus d’encre et de papier, mais fabriquent aussi des objets, des maisons et même des organes !</p>
+                <img src="../img/expo-imprimeur.png" alt="">
+            </div>
         </div>
     </div>
 
-    <div id="expo-4" class="hide">
+    <div id="expo-4" class="section hide">
         <h1>Comment ?</h1>
-        <button class="expo-btn prev" data-current="4">Qui ?</button>
-        <button class="expo-btn next" data-current="4">Pourquoi ?</button>
+        <h2 class="prev-title expo-btn prev" data-current="4">Qui ?</h2>
+        <h2 class="next-title expo-btn next" data-current="4">Pourquoi ?</h2>
 
-        <div class="expo-section comment">
+        <div class="expo-section comment section-left">
             <img src="../img/expo-woodenletter.png" alt="">
             <p>
                 Les pièces en bois étaient sculptées à la main, ce qui demandait du temps et de la précision. Leur principal inconvénient était l’usure rapide : le bois s’abîmait avec l’encre et l’humidité, rendant les impressions moins nettes avec le temps.
             </p>
         </div>
 
-        <div class="expo-section comment">
+        <div class="expo-section comment section-right">
             <img src="../img/expo-metalletter.png" alt="" class="right">
             <p>
                 Les pièces de Gutenberg étaient en métal, moulées individuellement pour former des caractères mobiles réutilisables. Contrairement au bois, le métal était plus résistant et permettait des impressions plus nettes et durables. Son principal avantage était la modularité : on pouvait recomposer un texte facilement sans tout refaire, rendant l’impression bien plus rapide et efficace.
             </p>
         </div>
 
-        <div class="expo-section comment">
+        <div class="expo-section comment section-left">
             <img src="../img/expo-printer.png" alt="" class="printer">
             <p>
                 Les imprimantes d’aujourd’hui utilisent des cartouches d’encre ou du toner pour déposer du texte et des images sur du papier. Contrairement aux caractères mobiles, elles peuvent imprimer n’importe quel document en quelques secondes sans préparation préalable. Leur principal inconvénient reste le coût des consommables, l’obsolescence rapide et, bien sûr, les fameuses cartouches vides au pire moment !
@@ -98,10 +104,10 @@
         </div>
     </div>
 
-    <div id="expo-5" class="hide">
+    <div id="expo-5" class="section hide">
         <h1>Pourquoi ?</h1>
-        <button class="expo-btn prev" data-current="5">Comment ?</button>
-        <button class="expo-btn next" data-current="5">Et après ?</button>
+        <h2 class="prev-title expo-btn prev" data-current="5">Comment ?</h2>
+        <h2 class="next-title expo-btn next" data-current="5">Et après ?</h2>
 
         <div class="expo-section pourquoi tableau">
             <p>
@@ -116,20 +122,22 @@
         </div>
     </div>
 
-    <div id="expo-6" class="hide">
-        <button class="expo-btn prev" data-current="6">Pourquoi ?</button>
-        <h1 class="apres-title">Et après ?</h1>
-
-        <p>
-            Et après l’imprimerie ? Avec l’ère d’Internet, ce secteur a pris un virage radical. Autrefois pilier de la conservation culturelle et de la transmission du savoir, il a peu à peu cédé sa place au numérique. Les livres, journaux et encyclopédies imprimés ont été supplantés par les écrans, où l’information circule plus vite et atteint un public plus large. Pourtant, l’imprimerie n’a pas disparu pour autant : elle s’est adaptée, misant sur des éditions de qualité, du design soigné et l’impression à la demande. Aujourd’hui, elle coexiste avec le numérique, offrant une alternative tangible dans un monde de plus en plus dématérialisé.
-        </p>
-
-        <img src="../img/plug.svg" class="expo-btn next plug" data-current="6" alt="Suivant">
+    <div id="expo-6" class="section hide">
+        <div class="apres-wrapper">
+            <div class="apres-title">
+                <h1>Et après ?</h1>
+            </div>
+            <h2 class="expo-btn prev-title prev" data-current="6">Pourquoi ?</h2>
+            <p class="p-bg">
+                Et après l’imprimerie ? Avec l’ère d’Internet, ce secteur a pris un virage radical. Autrefois pilier de la conservation culturelle et de la transmission du savoir, il a peu à peu cédé sa place au numérique. Les livres, journaux et encyclopédies imprimés ont été supplantés par les écrans, où l’information circule plus vite et atteint un public plus large. Pourtant, l’imprimerie n’a pas disparu pour autant : elle s’est adaptée, misant sur des éditions de qualité, du design soigné et l’impression à la demande. Aujourd’hui, elle coexiste avec le numérique, offrant une alternative tangible dans un monde de plus en plus dématérialisé.
+            </p>
+            <img src="../img/plug.svg" class="expo-btn next plug" data-current="6" alt="Suivant">
+        </div>
     </div>
 
-    <div id="expo-7" class="hide">
-        <p class="reservez-texte">Vous voulez en savoir plus ? Manipuler des caractères d'imprimerie ? Réaliser votre propre impression à l'ancienne ?</p>
-        <a class="reservez-btn" href="reservation.html">Réservez !</a>
+    <div id="expo-7" class="section hide">
+        <p class="reservez-texte p-bg">Vous voulez en savoir plus ? Manipuler des caractères d'imprimerie ? Réaliser votre propre impression à l'ancienne ?</p>
+        <a class="button reservez-btn" href="reservation.html">Réservez !</a>
     </div>
 
     <script src="../script.js"></script>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the exhibit</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
+</head>
+<body class="expo">
+    <header>
+        <nav>
+            <select name="lang" id="lang">
+                <option value="fr">Fr</option>
+                <option value="en" selected>En</option>
+            </select>
+            <a href="index.html">
+                <img src="../img/logo.svg" alt="Home">
+            </a>
+            <div class="burger-menu close">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <button class="close button">X</button>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expo.html">Exhibition</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="reservation.html">Buy your tickets</a></li>
+                <li><a href="infos.html">Informations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="expo-1" class="section">
+        <h1>Why do we only talk about Gutenberg when we talk about printing ?</h1>
+        <p class="p-bg">We mostly talk about Gutenberg because he perfected printing with metal movable type, thus making books accessible. But let's be honest, he didn't invent everything! The Chinese were already printing with wooden blocks centuries before him, and the Koreans even used metal movable type. Gutenberg just had the genius to make it more efficient in Europe and to make himself more famous!</p>
+        <img src="../img/gutenberg-mobile-en.png" alt="Next" class="expo-btn gutenberg-btn next" data-current="1">
+    </div>
+
+    <div id="expo-2" class="section expo-nav hide">
+        <img src="../img/gutenberg-yeux.png" alt="" class="gutenberg-img">
+
+        <div class="expo-nav-btns">
+            <img src="../img/who.png" alt="Who?" class="qui expo-btn next" data-current="2">
+            <img src="../img/how.png" alt="How?" class="expo-btn skip qui" data-current="2" data-goto="4">
+            <img src="../img/why.png" alt="Why?" class="qui expo-btn skip" data-current="2" data-goto="5">
+            <img src="../img/after.png" alt="And after?" class="apres expo-btn skip" data-current="2" data-goto="6">
+        </div>
+    </div>
+
+    <div id="expo-3" class="section hide">
+        <h1>Who?</h1>
+        <h2 class="next-title expo-btn next" data-current="3">How?</h2>
+        <div class="card-wrapper">
+            <div class="expo-card first-card">
+                <p class="text">The Chinese invented printing with wooden blocks as early as the 9th century, carving entire texts to reproduce them in series. In the 11th century, Bi Sheng even created movable type characters in clay, long before Gutenberg, but the complexity of Chinese writing limited their use.</p>
+                <img src="../img/expo-chinois.png" alt="">
+            </div>
+            <div class="expo-card">
+                <div class="text">
+                    <p>Gutenberg was the first to use a metal alloy for printing, making large-scale printing viable thanks to the steps designed by Gutenberg:
+                        <ul>
+                            <li>Typography</li>
+                            <li>Composition</li>
+                            <li>Printing</li>
+                        </ul>
+                    </p>
+                </div>
+                <img src="../img/expo-gutenberg.png" alt="">
+            </div>
+            <div class="expo-card last-card">
+                <p class="text">Today, printers use ultra-efficient technologies such as offset and digital printing to produce books, newspapers, and posters in large quantities. With 3D printers, they no longer limit themselves to ink and paper, but also manufacture objects, houses, and even organs!</p>
+                <img src="../img/expo-imprimeur.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="expo-4" class="section hide">
+        <h1>How?</h1>
+        <h2 class="prev-title expo-btn prev" data-current="4">Who?</h2>
+        <h2 class="next-title expo-btn next" data-current="4">Why?</h2>
+
+        <div class="expo-section comment section-left">
+            <img src="../img/expo-woodenletter.png" alt="">
+            <p>
+                The wooden pieces were hand-carved, which required time and precision. Their main disadvantage was rapid wear: the wood deteriorated with ink and humidity, making the prints less sharp over time.
+            </p>
+        </div>
+
+        <div class="expo-section comment section-right">
+            <img src="../img/expo-metalletter.png" alt="" class="right">
+            <p>
+                Gutenberg's pieces were made of metal, individually cast to form reusable movable type. Unlike wood, metal was more durable and allowed for sharper and longer-lasting prints. Its main advantage was modularity: a text could be easily recomposed without redoing everything, making printing much faster and more efficient.
+            </p>
+        </div>
+
+        <div class="expo-section comment section-left">
+            <img src="../img/expo-printer.png" alt="" class="printer">
+            <p>
+                Today's printers use ink cartridges or toner to deposit text and images on paper. Unlike movable type, they can print any document in seconds without prior preparation. Their main drawback remains the cost of consumables, rapid obsolescence, and, of course, the infamous empty cartridges at the worst moment!
+            </p>
+        </div>
+    </div>
+
+    <div id="expo-5" class="section hide">
+        <h1>why?</h1>
+        <h2 class="prev-title expo-btn prev" data-current="5">How?</h2>
+        <h2 class="next-title expo-btn next" data-current="5">And after?</h2>
+
+        <div class="expo-section pourquoi tableau">
+            <p>
+            First of all, printing was invented to transmit human knowledge and understanding. It democratized learning and collective knowledge, as well as the need to remember one's history and culture, to better build the present.
+            </p>
+        </div>
+
+        <div class="expo-section pourquoi livre">
+            <p>
+            Next, the invention of printing revolutionized the world of art and literature by expanding its principles, making them much more accessible to a large part of the population.
+            </p>
+        </div>
+    </div>
+
+    <div id="expo-6" class="section hide">
+        <div class="apres-wrapper">
+            <div class="apres-title">
+                <h1>And after?</h1>
+            </div>
+            <h2 class="expo-btn prev-title prev" data-current="6">Why?</h2>
+            <p class="p-bg">
+                And after printing? With the Internet era, this sector has taken a radical turn. Once a pillar of cultural preservation and knowledge transmission, it has gradually given way to digital. Printed books, newspapers, and encyclopedias have been supplanted by screens, where information circulates faster and reaches a wider audience. However, printing has not disappeared: it has adapted, focusing on quality editions, careful design, and print-on-demand. Today, it coexists with digital, offering a tangible alternative in an increasingly dematerialized world.
+            </p>
+            <img src="../img/plug.svg" class="expo-btn next plug" data-current="6" alt="Next">
+        </div>
+    </div>
+
+    <div id="expo-7" class="section hide">
+        <p class="reservez-texte p-bg">Want to know more? Handle printing characters? Make your own old-fashioned print?</p>
+        <a class="button reservez-btn" href="reservation.html">Book now!</a>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

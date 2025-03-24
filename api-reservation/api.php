@@ -31,7 +31,7 @@ switch($request_method)
         postReservation($_POST);
 
         header('Content-Type: application/json');
-        echo json_encode(array('message' => 'Line added successfully'), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        echo json_encode(array('message' => 'Line added successfully', 'success' => true), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         break;
         
     case 'PUT':
