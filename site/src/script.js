@@ -22,6 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     })
 
+    document.querySelectorAll('.expo-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.toggle('active');
+        })
+        card.addEventListener('mouseleave', () => {
+            card.classList.toggle('active');
+        })
+
+        card.addEventListener('touchstart', () => {
+            card.classList.toggle('active');
+        })
+    })
+
+
     document.querySelectorAll('.form-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const currentpage = parseInt(btn.dataset.current);

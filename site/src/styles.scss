@@ -53,6 +53,19 @@ body.expo {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+
+    div {
+        height: 100%;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        max-width: 600px;
+    }
+
+    p {
+        max-width: 520px;
+        padding: 20px;
+    }
 }
 
 .gutenberg-btn {
@@ -110,10 +123,10 @@ body.expo {
     max-width: 250px;
     min-height: 300px;
     padding: 15px;
-    margin: auto;
+    margin: 20px auto;
     position: relative;
 
-    &:hover img {
+    &.active img {
         opacity: 0;
     }
 
@@ -122,7 +135,7 @@ body.expo {
         transition: opacity 0.2s ease-out;
     }
 
-    &:hover .text {
+    &.active .text {
         opacity: 1;
     }
 
@@ -142,7 +155,106 @@ body.expo {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 20px;
 }
+
+.expo-section.comment {
+    background-color: rgba(250, 235, 215, 0.784);
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+        max-width: 100px;
+        float: left;
+        margin: 5px 10px;
+    }
+
+    .printer {
+        max-width: 150px;
+    }
+
+    .right {
+        float: right;
+    }
+}
+
+.expo-section.pourquoi {
+    padding: 30px;
+
+    &.tableau {
+        background-image: url(img/tableau.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px;
+        color: white;
+        transform: rotate(-5deg);
+
+        p {
+            margin-left: auto;
+        }
+    }
+
+    &.livre {
+        background-image: url(img/livre.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px;
+        transform: rotate(5deg);
+    }
+
+    p {
+        max-width: 50%;
+    }
+}
+
+#expo-6 {
+    position: relative;
+    padding-bottom: 200px;
+}
+
+.apres-title {
+    background-image: url(img/ordi.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    max-width: 300px;
+    min-height: 300px;
+    text-align: right;
+    padding: 50px 20px 0 20px;
+    margin-left: auto;
+    color: white;
+}
+
+.plug {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.reservez-texte {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.reservez-btn {
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+
 
 body.reservation {
     background-image: url(img/book-bg-mobile.jpg);
