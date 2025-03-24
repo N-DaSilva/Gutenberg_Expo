@@ -4,8 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réserver - Gutenberg : Et l'encre fuse</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
 </head>
-<body>
-    
+<body class="reservation">
+    <header>
+        <nav>
+            <select name="lang" id="lang">
+                <option value="fr">Fr</option>
+                <option value="en">En</option>
+            </select>
+            <a href="index.html">
+                <img src="../img/logo.svg" alt="Accueil">
+            </a>
+            <button class="burger close">Menu</button>
+            <ul class="nav-links">
+                <button class="close">X</button>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="expo.html">Exposition</a></li>
+                <li><a href="#">L'expérience</a></li>
+                <li><a href="reservation.html">Réserver</a></li>
+                <li><a href="infos.html">Informations pratiques</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <p>Réservez votre visite</p>
+        <p>Choisissez vos tickets</p>
+        <p>Récapitulatif et paiement</p>
+    </div>
+
+    <form action="">
+        <div id="etape-1">
+            <fieldset>
+                <legend><h1>Réservez votre visite</h1></legend>
+                <br><br>
+                <p>Tous les champs sont requis</p>
+                <div class="wrapper">
+                    <div class="form-group nom">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group prenom">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group date">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group code">
+                        <label for="code">Code promo</label>
+                        <input type="text" id="code" name="code">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend><h2>Choisissez un horaire</h2></legend>
+                <br><br>
+                <div class="hour-btns">
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-1" value="09:00" required>
+                        <label for="heure-1">9h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-2" value="10:00" required>
+                        <label for="heure-2">10h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-3" value="11:00" required>
+                        <label for="heure-3">11h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-4" value="12:00" required>
+                        <label for="heure-4">12h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-5" value="13:00" required>
+                        <label for="heure-5">13h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-6" value="14:00" required>
+                        <label for="heure-6">14h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-7" value="15:00" required>
+                        <label for="heure-7">15h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-8" value="16:00" required>
+                        <label for="heure-8">16h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-9" value="17:00" required>
+                        <label for="heure-9">17h</label>
+                    </div>
+                    <div class="hour-btn">
+                        <input type="radio" name="heure" id="heure-10" value="18:00" required>
+                        <label for="heure-10">18h</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="button" class="form-btn next" data-current="1">Suivant</button>
+        </div>
+
+        <div class="hide" id="etape-2">
+            <fieldset>
+                <legend><h2>Choisissez vos tickets</h2></legend>
+                <br><br>
+                <div class="ticket" id="forfait-1">
+                    <p>Tarif Enfants (-12 ans) - 5€</p>
+                    <button type="button" class="ticket-btn moins">-</button>
+                    <span id="ticket-nbr-1">---</span>
+                    <button type="button" class="ticket-btn plus">+</button>
+                    <div class="added-tickets"></div>
+                </div>
+
+                <div class="ticket" id="forfait-2">
+                    <p>Tarif Jeunes (-26 ans) - 10€</p>
+                    <button type="button" class="ticket-btn moins">-</button>
+                    <span id="ticket-nbr-2">---</span>
+                    <button type="button" class="ticket-btn plus">+</button>
+                    <div class="added-tickets"></div>
+                </div>
+
+                <div class="ticket" id="forfait-3">
+                    <p>Plein tarif - 12€</p>
+                    <button type="button" class="ticket-btn moins">-</button>
+                    <span id="ticket-nbr-3">---</span>
+                    <button type="button" class="ticket-btn plus">+</button>
+                    <div class="added-tickets"></div>
+                </div>
+                <div class="ticket" id="forfait-4">
+                    <p>Tarif Seniors (+62 ans) - 10€</p>
+                    <button type="button" class="ticket-btn moins">-</button>
+                    <span id="ticket-nbr-4">---</span>
+                    <button type="button" class="ticket-btn plus">+</button>
+                    <div class="added-tickets"></div>
+                </div>
+            </fieldset>
+
+            <div class="form-selection">
+                <h3>Votre sélection</h3>
+                <br><br>
+                <ul id="ticket-selection"></ul>
+                <p>Total : <span id="total-selection"></span></p>
+            </div>
+
+            <button type="button" class="form-btn prev" data-current="2">Précédent</button>
+            <button type="button" id="to-recap" class="form-btn next" data-current="2">Suivant</button>
+        </div>
+
+        <div class="hide" id="etape-3">
+            <div class="summary" id="summary">
+                <h2>Récapitulatif</h2>
+                <br><br>
+                <p>Nom : <span id="nom-summary"></span></p>
+                <p>Prénom : <span id="prenom-summary"></span></p>
+                <p>Email : <span id="email-summary"></span></p>
+                <p>Date : <span id="date-summary"></span></p>
+                <p>Horaire : <span id="horaire-summary"></span></p>
+                <p>Tickets : <ul id="tickets-summary"></ul></p>
+                <p>Total à payer : <span id="total-summary"></span></p>
+            </div>
+
+            <fieldset>
+                <legend><h2>Informations de paiement</h2></legend>
+                <br><br>
+                <div class="form-group">
+                    <label for="card">Numéro de carte</label>
+                    <input type="text" id="card" name="card">
+                </div>
+                <div class="form-group">
+                    <label for="date-exp">Date d'expiration</label>
+                    <input type="text" id="date-exp" name="date-exp">
+                </div>
+                <div class="form-group">
+                    <label for="crypto">Cryptogramme</label>
+                    <input type="text" id="crypto" name="crypto">
+                </div>
+            </fieldset>
+
+            <button type="button" class="form-btn prev" data-current="3">Précédent</button>
+            <input type="submit" value="Valider">
+        </div>
+    </form>
+
+    <script src="../script.js"></script>
 </body>
 </html>

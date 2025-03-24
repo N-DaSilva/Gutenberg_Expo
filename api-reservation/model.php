@@ -31,12 +31,24 @@ function postReservation($post){
 
     $dateheure = date('Y-m-d H:i:s', strtotime($post['date']. ' ' . $post['heure']));
 
-    $query -> bindParam(':dateheure', $dateheure, PDO::PARAM_STR);
-    $query -> bindParam(':email', $post['email'], PDO::PARAM_STR);
-    $query -> bindParam(':prenom', $post['prenom'], PDO::PARAM_STR);
-    $query -> bindParam(':nom', $post['nom'], PDO::PARAM_STR);
-    $query -> bindParam(':tarif', $post['tarif'], PDO::PARAM_INT);
-    $query -> execute();
+
+    if (is_array($post['nom'])) {
+        for ($i = 0; $i < count($post['nom']); $i++) {
+            $query -> bindParam(':dateheure', $dateheure, PDO::PARAM_STR);
+            $query -> bindParam(':email', $post['email'], PDO::PARAM_STR);
+            $query -> bindParam(':prenom', $post['prenom'][$i], PDO::PARAM_STR);
+            $query -> bindParam(':nom', $post['nom'][$i], PDO::PARAM_STR);
+            $query -> bindParam(':tarif', $post['tarif'][$i], PDO::PARAM_INT);
+            $query -> execute();
+        }
+    } else {
+        $query -> bindParam(':dateheure', $dateheure, PDO::PARAM_STR);
+        $query -> bindParam(':email', $post['email'], PDO::PARAM_STR);
+        $query -> bindParam(':prenom', $post['prenom'], PDO::PARAM_STR);
+        $query -> bindParam(':nom', $post['nom'], PDO::PARAM_STR);
+        $query -> bindParam(':tarif', $post['tarif'], PDO::PARAM_INT);
+        $query -> execute();
+    }
 }
 
 

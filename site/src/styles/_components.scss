@@ -6,16 +6,23 @@ nav {
     padding: 10px;
 
     .nav-links {
+        position: absolute;
+        height: 100vh;
+        width: 50%;
+        z-index: 1;
+        top: 0;
+        right: 0;
         margin: 0;
         padding: 0;
-        position: absolute;
-        top: 10%;
-        right: -10%;
+        transform: translateX(100%);
+        pointer-events: none;
         opacity: 0;
-        transition: right 0.5s ease, opacity 0.5s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        background-color: black;
 
         &.nav-active {
-            right: 10%;
+            pointer-events: all;
+            transform: translateX(0);
             opacity: 1;
         }
     }
@@ -24,6 +31,18 @@ nav {
         list-style: none;
         margin: 0;
         padding: 0;
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.5s ease;
+    
+            &:hover {
+                background-color: grey;
+            }
+        }
     }
 
     img {

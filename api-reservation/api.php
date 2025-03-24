@@ -37,7 +37,6 @@ switch($request_method)
     case 'PUT':
         if (isset($_GET["id"])){
             parse_str(file_get_contents("php://input"), $putData);
-            var_dump($putData);
             updateReservation($_GET["id"],$putData);
 
             header('Content-Type: application/json');
@@ -48,7 +47,15 @@ switch($request_method)
         }
         break;
     case 'DELETE':
-        deleteReservation($_GET["id"]);
+        if (isset($_GET["id"])){
+            deleteReservation($_GET["id"]);
+
+            header('Content-Type: application/json');
+            echo json_encode(array('message' => 'Line deleted successfully'), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(array('message' => 'Missing line id'), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        }
         break;
     default:
         header('Content-Type: application/json');
