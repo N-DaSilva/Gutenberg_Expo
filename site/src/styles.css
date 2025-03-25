@@ -233,6 +233,17 @@ body.expo p {
   z-index: -1;
 }
 
+.discover-btn {
+  background-color: #A02020;
+  color: white;
+  padding: 10px;
+  width: fit-content;
+  font-size: larger;
+}
+.discover-btn:hover {
+  transform: translateX(20px);
+}
+
 .hide {
   display: none;
 }
@@ -266,9 +277,11 @@ body.expo p {
   cursor: pointer;
   transition: transform 0.2s ease-out;
   transform-origin: center;
-  text-decoration: underline;
 }
 
+.next-title {
+  text-decoration: underline;
+}
 .next-title::after {
   content: "⇀";
 }
@@ -276,6 +289,9 @@ body.expo p {
   transform: translateX(10px);
 }
 
+.prev-title {
+  text-decoration: underline;
+}
 .prev-title::before {
   content: "↼";
 }

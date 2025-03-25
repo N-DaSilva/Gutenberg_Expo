@@ -130,6 +130,18 @@ body.expo {
     z-index: -1;
 }
 
+.discover-btn {
+    background-color: #A02020;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    font-size: larger;
+
+    &:hover {
+        transform: translateX(20px);
+    }
+}
+
 .hide {
     display: none;
 }
@@ -163,10 +175,10 @@ body.expo {
     cursor: pointer;
     transition: transform 0.2s ease-out;
     transform-origin: center;
-    text-decoration: underline;
 }
 
 .next-title {
+    text-decoration: underline;
     &::after{
         content : "⇀";
     }
@@ -177,6 +189,7 @@ body.expo {
 }
 
 .prev-title {
+    text-decoration: underline;
     &::before{
         content : "↼";
     }
