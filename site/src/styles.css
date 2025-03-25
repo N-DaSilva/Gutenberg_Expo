@@ -38,6 +38,7 @@ nav li {
   padding: 0;
 }
 nav li a {
+  font-size: 1.2rem;
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -92,6 +93,12 @@ nav .burger-menu div {
   }
   nav li a:hover {
     background-color: white;
+  }
+  nav .dark-bg a {
+    color: white;
+  }
+  nav .dark-bg a:hover {
+    background-color: black;
   }
 }
 @font-face {
@@ -156,8 +163,14 @@ body.home {
   overflow: hidden;
 }
 
+.books-container {
+  display: flex;
+  height: 100%;
+}
+
 .books {
-  margin-top: 60%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .book {
@@ -215,11 +228,9 @@ body.expo p {
 
 .gutenberg-btn {
   max-width: 400px;
-  cursor: pointer;
-  transition: transform 0.2s ease-out;
-}
-.gutenberg-btn:hover {
-  transform: scale(1.1) rotate(5deg);
+  position: relative;
+  bottom: -30px;
+  z-index: -1;
 }
 
 .hide {
@@ -617,9 +628,6 @@ body.infos main {
 }
 
 @media (min-width: 1024px) {
-  .books {
-    margin-top: 20px;
-  }
   .book h1 {
     font-size: 2rem;
     top: 30%;
@@ -633,11 +641,7 @@ body.infos main {
     bottom: 0;
     max-width: 1000px;
     width: 700px;
-    cursor: pointer;
     transition: transform 0.2s ease-out;
-  }
-  .gutenberg-btn:hover {
-    transform: scale(1.01) rotate(1deg);
   }
   .expo-nav-btns {
     justify-content: flex-start;

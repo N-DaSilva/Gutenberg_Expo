@@ -37,6 +37,7 @@ nav {
         padding: 0;
 
         a {
+            font-size: 1.2rem;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -67,7 +68,6 @@ nav {
         background: #000000;
         border-radius: 2px;
     }
-
 }
 
 @media (min-width:1024px){
@@ -98,6 +98,14 @@ nav {
                 &:hover {
                     background-color: white;
                 }
+            }
+        }
+
+        .dark-bg a {
+            color: white;
+
+            &:hover {
+                background-color: black;
             }
         }
     }
