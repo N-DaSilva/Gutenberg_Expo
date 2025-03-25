@@ -302,6 +302,7 @@ body.expo p {
   padding: 15px;
   margin: 20px auto;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .expo-card.active img {
   opacity: 0;
@@ -321,6 +322,14 @@ body.expo p {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.2s ease-out;
+}
+
+.first-card {
+  transform: rotate(-5deg);
+}
+
+.last-card {
+  transform: rotate(5deg);
 }
 
 #expo-4 {
@@ -659,11 +668,11 @@ body.infos main {
     max-width: 1000px;
     margin: auto;
   }
-  .card-wrapper .first-card {
-    transform: rotate(-5deg);
+  .expo-card {
+    transition: transform 0.2s ease-out;
   }
-  .card-wrapper .last-card {
-    transform: rotate(5deg);
+  .expo-card:hover {
+    transform: translateY(-20px);
   }
   #expo-4 {
     background-image: url(img/expo-line.svg);
