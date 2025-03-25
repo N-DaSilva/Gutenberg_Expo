@@ -1,0 +1,61 @@
+/* Form Container */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border: 1px solid #832C2C;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #832C2C;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Focus effect */
+input:focus {
+    outline: none;
+    border-color: #832C2C;
+    box-shadow: 0 0 5px rgba(131, 44, 44, 0.5);
+}
+
+/* Button */
+button[type="submit"] {
+    background: #832C2C;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #a04040;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}

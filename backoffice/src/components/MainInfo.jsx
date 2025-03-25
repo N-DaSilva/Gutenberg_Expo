@@ -7,23 +7,25 @@ export const MainInfo = ({ reservations }) => {
     weekEnd.setDate(weekStart.getDate()+6);
     
     return (
-        <div>
+        <div className="main-info">
             <h2>Informations globales</h2>
-            <div>
-                <h3>Nombre total de réservations</h3>
-                <p className="number">{reservations.length}</p>
-            </div>
-            <div>
+            <div className="wrapper-column">
                 <div>
-                    <h3>Cette semaine</h3>
-                    <p className="number">{reservations.filter((reservation) => {
-                        const reservationDate = new Date(reservation.dateheure);
-                        return reservationDate >= weekStart && reservationDate <= weekEnd;
-                    }).length}</p>
+                    <h3>Nombre total de réservations</h3>
+                    <p className="number">{reservations.length}</p>
                 </div>
-                <div>
-                    <h3>Aujourd'hui</h3>
-                    <p className="number">{reservations.filter((reservation) => new Date(reservation.dateheure).getDate() == today.getDate()).length}</p>
+                <div className="wrapper-row">
+                    <div>
+                        <h3>Visiteurs cette semaine</h3>
+                        <p className="number">{reservations.filter((reservation) => {
+                            const reservationDate = new Date(reservation.dateheure);
+                            return reservationDate >= weekStart && reservationDate <= weekEnd;
+                        }).length}</p>
+                    </div>
+                    <div>
+                        <h3>Visiteurs aujourd'hui</h3>
+                        <p className="number">{reservations.filter((reservation) => new Date(reservation.dateheure).getDate() == today.getDate()).length}</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Lege
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 export const BarChartDay = ({ reservations }) => {
-    const hourNames = ['9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h'];
+    const hourNames = ['9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h'];
 
     const hourCounts = hourNames.reduce((accumulator, hourName) => {
         accumulator[hourName] = 0;
@@ -22,15 +22,14 @@ export const BarChartDay = ({ reservations }) => {
             {
                 label: 'Réservations par heure de la journée',
                 data: Object.values(hourCounts),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(131, 44, 44, 0.75)',
+                borderColor: 'rgba(131, 44, 44, 1)',
                 borderWidth: 1,
             },
         ],
     };
 
     const options = {
-        responsive: true,
         plugins: {
             legend: {
                 display: true,
@@ -52,7 +51,8 @@ export const BarChartDay = ({ reservations }) => {
     };
 
     return (
-        <div>
+        <div className='bar-chart'>
+            <h2>Répartition des réservations selon les heures dans la journée</h2>
             <Bar data={data} options={options} />
         </div>
     );

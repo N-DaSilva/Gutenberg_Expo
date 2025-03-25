@@ -23,15 +23,14 @@ export const BarChartWeek = ({ reservations }) => {
             {
                 label: 'Réservations par jour de la semaine',
                 data: Object.values(dayCounts),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(131, 44, 44, 0.75)',
+                borderColor: '#832C2C',
                 borderWidth: 1,
             },
         ],
     };
 
     const options = {
-        responsive: true,
         plugins: {
             legend: {
                 display: true,
@@ -57,7 +56,8 @@ export const BarChartWeek = ({ reservations }) => {
     };
 
     return (
-        <div>
+        <div className='bar-chart'>
+            <h2>Répartition des réservations selon le jour de la semaine</h2>
             <Bar data={data} options={options} />
         </div>
     );

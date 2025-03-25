@@ -1,5 +1,104 @@
-div {
-    border: 1px solid #000;
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+#root {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    color: #832C2C;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+details {
+    margin: 20px 0;
+    border: 1px solid #832C2C;
+    border-radius: 5px;
     padding: 10px;
-    margin: 1px;
+    background: #f8f8f8;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details>summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+.main-info {
+    max-width: fit-content;
+    margin: auto;
+    background-color: #832C2C;
+}
+
+.main-info h2 {
+    color: #fff;
+    padding: 10px;
+}
+
+.wrapper-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.wrapper-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #832C2C;
+    text-align: center;
+}
+
+.pie-chart {
+    max-width: 500px;
+}
+
+.bar-chart {
+    max-width: 400px;
+}
+
+div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+button {
+    background: #832C2C;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a04040;
 }

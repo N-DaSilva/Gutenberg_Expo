@@ -22,7 +22,6 @@ export const PieChart = ({ reservations }) => {
   };
 
   const options = {
-    responsive: true,
     plugins: {
       legend: {
         position: 'left',
@@ -31,7 +30,8 @@ export const PieChart = ({ reservations }) => {
   };
 
   return (
-    <div>
+    <div className='pie-chart'>
+      <h2>Répartition des réservations selon le tarif (tranche d'âge)</h2>
         <Pie data={data} options={options} />
     </div>
   );
