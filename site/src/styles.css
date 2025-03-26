@@ -103,7 +103,8 @@ nav .burger-menu div {
 }
 @font-face {
   font-family: "Cinzel Decorative";
-  src: url(fonts/Cinzel_Decorative/CinzelDecorative-Black.ttf) format("truetype");
+  src: url(fonts/Cinzel_Decorative/CinzelDecorative-Black.ttf)
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -115,22 +116,33 @@ nav .burger-menu div {
 }
 html,
 body {
-  overflow-X: hidden;
+  overflow-x: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Cinzel Decorative", serif;
 }
 
-p, label, input, button {
+p,
+label,
+input,
+button {
   font-family: "Abhaya Libre", serif;
 }
 
-.button, .invert, form .form-btn, form input[type=submit] {
+.button,
+.invert,
+form .form-btn,
+form input[type="submit"] {
   width: fit-content;
   background-color: black;
   color: white;
@@ -140,16 +152,23 @@ p, label, input, button {
   text-decoration: none;
   transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
-.button:hover, .invert:hover, form .form-btn:hover, form input[type=submit]:hover {
+.button:hover,
+.invert:hover,
+form .form-btn:hover,
+form input[type="submit"]:hover {
   background-color: white;
   color: black;
 }
 
-.invert, form .form-btn, form input[type=submit] {
+.invert,
+form .form-btn,
+form input[type="submit"] {
   background-color: white;
   color: black;
 }
-.invert:hover, form .form-btn:hover, form input[type=submit]:hover {
+.invert:hover,
+form .form-btn:hover,
+form input[type="submit"]:hover {
   background-color: black;
   color: white;
 }
@@ -234,7 +253,7 @@ body.expo p {
 }
 
 .discover-btn {
-  background-color: #A02020;
+  background-color: #a02020;
   color: white;
   padding: 10px;
   width: fit-content;
@@ -481,7 +500,7 @@ body.reservation {
 }
 
 .step.active {
-  background: #A02020;
+  background: #a02020;
   color: #fff;
 }
 
@@ -500,7 +519,8 @@ form .btn-wrap {
   width: 100%;
   margin: auto;
 }
-form .form-btn, form input[type=submit] {
+form .form-btn,
+form input[type="submit"] {
   font-size: 1.1rem;
   padding: 10px;
   border: 2px solid black;
@@ -508,12 +528,12 @@ form .form-btn, form input[type=submit] {
   background-color: transparent;
   border-radius: 5px;
 }
-form input[type=submit] {
-  background-color: #A02020;
+form input[type="submit"] {
+  background-color: #a02020;
   color: white;
   border: none;
 }
-form input[type=submit]:hover {
+form input[type="submit"]:hover {
   background-color: #000000;
 }
 form fieldset,
@@ -530,11 +550,11 @@ form .summary {
 form legend {
   float: left;
 }
-form input:not([type=submit]) {
+form input:not([type="submit"]) {
   width: 100%;
   padding: 5px;
 }
-form input[type=radio] {
+form input[type="radio"] {
   width: auto;
 }
 form .hour-btns {
@@ -647,7 +667,9 @@ body.infos main {
   margin: 20px auto;
 }
 
-.horaires, .acces, .contact {
+.horaires,
+.acces,
+.contact {
   background: #4c191e;
   color: #fff;
   padding: 20px;
@@ -749,7 +771,8 @@ body.infos main {
     grid-area: plug;
     margin-right: 0;
   }
-  .expo h1, .expo h2 {
+  .expo h1,
+  .expo h2 {
     margin-left: auto;
     width: fit-content;
   }
@@ -765,44 +788,6 @@ body.infos main {
   .ticket {
     width: 600px;
   }
-
-  body.infos {
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 20px;
-    color: #4c191e;
-}
-
-
-.horaires, .acces, .contact {
-    background: #4c191e;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.acces {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-.acces #map {
-    height: 50vh;
-}
-
 }
 
 /*# sourceMappingURL=styles.css.map */
