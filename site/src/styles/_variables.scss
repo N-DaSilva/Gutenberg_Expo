@@ -1,17 +1,7 @@
-@use 'sass:color';
-
 @mixin flexbox($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
-}
-
-@function contrast-color($background-color) {
-  @if color.contrast($background-color, black) > color.contrast($background-color, white) {
-    @return black;
-  } @else {
-    @return white;
-  }
 }
