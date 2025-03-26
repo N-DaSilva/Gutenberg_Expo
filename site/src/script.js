@@ -283,3 +283,29 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error(error));
     });
 });
+
+
+
+let latitude = 0;
+let longitude = 0;
+
+fetch('http://api.ipapi.com/api/check?access_key=dee05e122aacb37a2558845ff2395051').then(response => {
+    response.json().then(function (data) {
+        console.log(data);
+        latitude = data['latitude'];
+        longitude = data['longitude'];
+
+        latitude = 48.8566;
+        longitude = 2.3522;
+        var map = L.map('map').setView([latitude, longitude], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        console.log('LatLong')
+        console.log(latitude, longitude);
+        var marker = L.marker([latitude, longitude]).addTo(map);
+
+    })
+})
