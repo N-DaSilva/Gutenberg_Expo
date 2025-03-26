@@ -291,7 +291,6 @@ let longitude = 0;
 
 fetch('http://api.ipapi.com/api/check?access_key=dee05e122aacb37a2558845ff2395051').then(response => {
     response.json().then(function (data) {
-        console.log(data);
         latitude = data['latitude'];
         longitude = data['longitude'];
 
@@ -303,8 +302,7 @@ fetch('http://api.ipapi.com/api/check?access_key=dee05e122aacb37a2558845ff239505
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        console.log('LatLong')
-        console.log(latitude, longitude);
+        
         var marker = L.marker([latitude, longitude]).addTo(map);
 
     })
