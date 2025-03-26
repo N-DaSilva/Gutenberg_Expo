@@ -176,6 +176,49 @@ body.expo {
     }
 }
 
+select {
+    background-color: #f5f0e1; /* Beige clair */
+    color: #222; /* Noir profond */
+    border: 2px solid #222; /* Bordure noire */
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px; /* Coins arrondis */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    appearance: none; /* Supprime le style par défaut */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Effet hover */
+select:hover {
+    background-color: #e8dfca; /* Beige plus foncé */
+}
+
+/* Effet focus */
+select:focus {
+    border-color: #b89b72; /* Beige foncé */
+    box-shadow: 0 0 5px rgba(184, 155, 114, 0.7);
+}
+
+/* Style du conteneur pour éviter l'affichage par défaut de la flèche */
+.select-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Ajout d'une fausse flèche */
+.select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #222;
+    pointer-events: none; /* Empêche l'interaction avec la fausse flèche */
+}
+
 .expo-btn {
     cursor: pointer;
     width: fit-content;

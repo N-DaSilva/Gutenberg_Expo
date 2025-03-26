@@ -7,13 +7,10 @@
     <title>Informations pratiques - Gutenberg : Et l'encre fuse</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="shortcut icon" href="../img/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
- integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
- crossorigin=""></script>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
 </head>
 
 <body class="infos">
@@ -48,6 +45,7 @@
             <p>Du 24 mars au 31 août</p>
             <p>Ouvert de Lundi à Dimanche de 9h à 18h</p>
         </div>
+        
         <div class="acces">
             <div class="map" id="map"></div>
             <div>
@@ -67,6 +65,7 @@
         </div>
     </main>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="../script.js"></script>
     
 </body>
