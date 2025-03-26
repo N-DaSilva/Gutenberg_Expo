@@ -76,6 +76,25 @@ nav {
     }
 }
 
+select {
+    background-color: #f5f0e1; 
+    color: #222; 
+    border: 2px solid #222; 
+    padding: 10px 15px;
+    width: 100px;
+    font-size: 1rem;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+select:hover {
+    background-color: #e8dfca;
+}
+select:focus {
+    border-color: #b89b72; 
+    box-shadow: 0 0 5px rgba(184, 155, 114, 0.7);
+}
+
 @media (min-width:1024px){
     nav {
         .nav-links {

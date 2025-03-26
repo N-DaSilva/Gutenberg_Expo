@@ -1,12 +1,11 @@
-# React + Vite
+Procédure de restauration du backoffice :
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Télécharger la sauvegarde du site
+- Extraire les fichiers de l'archive
+- Importer la base de données des administrateurs dans le PHPmyadmin local
+- Remplacer la connexion à la base de données dans connect.php par les informations de la base de données locale
+- Modifier les liens et redirections :
+    - Remplacer https://rgbagency.fr dans logout.php et checkSession.php, et https://rgbagency.fr/backoffice par l'URL locale de l'application React
+    - Remplacer https://rgbagency.fr/backoffice/checkSession.php, https://rgbagency.fr/backoffice/logout.php et https://rgbagency.fr/backoffice/cconnect.php par l'URL locale des fichiers checkSession.php, logout.php et connect.php respectivement
+    - Remplacer https://rgbagency.fr/api-reservation/api.php par l'adresse locale de l'API
+- Effectuer la commande npm install à la racine, puis npm run dev pour lancer l'application React
