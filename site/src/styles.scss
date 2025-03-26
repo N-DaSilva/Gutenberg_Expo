@@ -57,7 +57,12 @@ body.home {
 
 .books-container {
     display: flex;
+    align-items: center;
     height: 100%;
+}
+
+.book-stack {
+    display: none;
 }
 
 .books {
@@ -69,7 +74,7 @@ body.home {
     transition: transform 0.2s ease-out;
     width: fit-content;
     position: relative;
-    max-width: 75%;
+    width: 100%;
 
     &:hover {
         transform: translateX(50px);
@@ -173,12 +178,14 @@ body.expo {
 
 .expo-btn {
     cursor: pointer;
+    width: fit-content;
     transition: transform 0.2s ease-out;
     transform-origin: center;
 }
 
 .next-title {
     text-decoration: underline;
+    margin-left: auto;
     &::after{
         content : "⇀";
     }
@@ -288,34 +295,59 @@ body.expo {
     background-position: center;
     padding: 50px 30px;
     max-width: 500px;
+    width: 100%;
     min-height: 300px;
     @include flexbox(column, center, center);
+    position: absolute;
+    transition: transform 0.2s ease-out;
 
     &.tableau {
         background-image: url(img/tableau.jpg);
         transform: rotate(-5deg);
         color: white;
+        top: 0;
+        z-index: 1;
 
         p {
             margin-left: auto;
             margin-top: 10px;
             margin-bottom: 0;
         }
+
+        &.active {
+            transform: translateY(-20px) rotate(-5deg);
+        }
     }
 
     &.livre {
         background-image: url(img/livre.png);
         transform: rotate(5deg);
+        top: 100px;
 
         p {
             margin-right: auto;
             margin-left: 30px;
+        }
+
+        &.active {
+            transform: translateY(-20px) rotate(5deg);
         }
     }
 
     p {
         max-width: 200px;
     }
+
+    &.active {
+        z-index: 2;
+    }
+}
+
+.pourquoi-wrapper {
+    position: relative;
+    @include flexbox(column, center, center);
+    max-width: 500px;
+    margin: auto;
 }
 
 #expo-6 {
@@ -578,6 +610,12 @@ body.infos {
         }
     }
 
+    .book-stack {
+        display: block;
+        max-width: 40%;
+        margin-left: auto;
+    }
+
     #expo-1 {
         h1 {
             margin-left: 0;
@@ -612,7 +650,7 @@ body.infos {
         transition: transform 0.2s ease-out;
 
         &:hover {
-            transform: translateY(-20px);
+            transform: translateY(-50px);
         }
     }
 
@@ -624,7 +662,7 @@ body.infos {
     }
 
     .expo-section.comment {
-        max-width: 400px;
+        max-width: 300px;
 
         &.section-left {
             margin: 30px 0 30px 30px;
@@ -633,6 +671,14 @@ body.infos {
         &.section-right {
             margin: 30px 30px 30px auto;
         }
+    }
+
+    .tableau {
+        left: 50px;
+    }
+
+    .livre {
+        right: 50px;
     }
 
     #expo-6 {
@@ -662,7 +708,6 @@ body.infos {
             
 
             h1 {
-                font-size: 3rem;
                 margin: 150px 50px 150px 50px;
             }
         }
@@ -685,9 +730,14 @@ body.infos {
     }
 
     .expo {
-        h1, h2 {
+        h1 {
+            margin-top: 0;
             margin-left: auto;
             width: fit-content;
+
+            &:not(.first-title){
+                font-size: 3rem;
+            }
         }
     }
 

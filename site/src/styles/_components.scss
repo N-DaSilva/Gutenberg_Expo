@@ -70,6 +70,12 @@ nav {
     }
 }
 
+.dark-bg {
+    .burger-menu div {
+        background: white;
+    }
+}
+
 @media (min-width:1024px){
     nav {
         .nav-links {
@@ -100,13 +106,15 @@ nav {
                 }
             }
         }
+    }
 
-        .dark-bg a {
+    .dark-bg {
+        li a {
             color: white;
-
-            &:hover {
-                background-color: black;
-            }
+        }
+    
+        li a:hover {
+            background-color: black;
         }
     }
 }

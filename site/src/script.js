@@ -8,14 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.replace(newUrl);
     });
 
+    const nav = document.querySelector('nav');
+    if (nav.classList.contains('dark-bg')){
+        document.querySelector('.logo').src = '../img/logo-light.svg';
+    }
 
 
     const toggle = document.querySelectorAll('.close');
-    const nav = document.querySelector('.nav-links');
+    const navlinks = document.querySelector('.nav-links');
 
     toggle.forEach((btn) => {
         btn.addEventListener('click', () => {
-            nav.classList.toggle('nav-active');
+            navlinks.classList.toggle('nav-active');
         })
     });
 
@@ -43,6 +47,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         card.addEventListener('touchstart', () => {
             card.classList.toggle('active');
+        })
+    })
+
+    document.querySelectorAll('.expo-section.pourquoi').forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            section.classList.add('active');
+        })
+        section.addEventListener('mouseleave', () => {
+            section.classList.remove('active');
+        })
+
+        section.addEventListener('touchstart', () => {
+            const active = section.parentElement.querySelector('.active');
+            if (active) {
+                active.classList.remove('active');
+            }
+            section.classList.add('active');
         })
     })
 
